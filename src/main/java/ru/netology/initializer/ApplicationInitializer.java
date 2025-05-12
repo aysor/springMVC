@@ -13,8 +13,6 @@ public class ApplicationInitializer implements WebApplicationInitializer {
   public void onStartup(ServletContext servletContext) {
     final var context = new AnnotationConfigWebApplicationContext();
     context.scan("ru.netology");
-    //context.register(WebConfig.class);
-    //context.register(PostController.class);
     context.refresh();
 
     final var servlet = new DispatcherServlet(context);
